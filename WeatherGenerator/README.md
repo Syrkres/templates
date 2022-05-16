@@ -9,7 +9,7 @@ Following code is for a random Weather Generator for Obsidian Tempalter
 ## Files
 - WeatherGenerator.js - script file to generate weather - place in your TemplaterScript directory
 - Weather Template.md - simple MD template to prompt for season.
-
+- Images - load images into your Assets folder (I group mine in a sub folder /Weather)
 ## Use
 - Go to page where you want to load the template
 - open Templater
