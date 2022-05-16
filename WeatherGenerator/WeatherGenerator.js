@@ -51,7 +51,7 @@ function roll() {
 async function WeatherGenerator(tp, passedSeason) {
     var output = "This is weather";
     console.log("Preseason:" + passedSeason);
-    if ((Number(passedSeason) < 1) || (Number(passedSeason) > 1)) {
+    if ((Number(passedSeason) < 1) || (Number(passedSeason) > 4)) {
         var temp = Math.floor(Math.random() * (4 - 1 + 1) + 1);
         passedSeason = temp.toString();
     }
@@ -299,7 +299,7 @@ function winterWeather(roll,wObj, night) {
             wObj.seasonWeatherImage = "snow" + night + ".png";
     } else if (inRange(roll, 31, 40)) {
             wObj.seasonWeather = "Heavy Clouds";
-            wObj.seasonWeatherImage = "cloudyNight" + night + ".png";
+            wObj.seasonWeatherImage = "cloudyStorm" + night + ".png";
     } else if (inRange(roll, 41, 70)) {
             wObj.seasonWeather = "Light Clouds";
             wObj.seasonWeatherImage = "partlyCloudy.png";
