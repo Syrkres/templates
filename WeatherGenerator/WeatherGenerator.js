@@ -1,4 +1,3 @@
-const {RULGenerator} = customJS;
 
 /* The following is sample/target output we are looking to generate based on CSS */
 const targetOutput = `
@@ -6,21 +5,25 @@ const targetOutput = `
 > 
 > # Current Weather
 > 
-> ![[clearSkies.png|Sunny]]
->
+> ![[clearSkies.png]]
+> 
+> Season: Spring
+> 
+> Clear Skies
+> 
+> Wind:  None 
+> 
+> Temperature<br><i class='hot'>Hotter than normal</i>
+> 
+> ![[temperatureHot.png]]
+> 
 > &nbsp;
 > 
-> Sunny
+> Night: High Winds
 > 
-> Wind: Normal
+> Wind:  Wild 
 > 
-> &nbsp;
-> 
-> Night: Cloudy
-> 
-> Wind: Strong
-> 
-> ![[cloudyNight.png]]
+> ![[windy.png]]
 > `;
 
 let weather = {
@@ -43,6 +46,11 @@ let weather = {
         seasonTemperatureChange: "Normal",
     }
 }
+
+/* Return random element from Array */
+function randomElement (array) {
+    return array[Math.floor(Math.random() * array.length)];
+}  
 
 function roll() {
    return Math.floor((Math.random() * 100) + 1);
@@ -116,8 +124,7 @@ function hilow() {
 }
 
 function springWeather(roll,wObj, night) {
-    wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
-    wObj.seasonWind = RULGenerator.generateRul("WIND"); 
+    wObj.seasonWind = randomElement(WIND_RULE);
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
@@ -139,7 +146,6 @@ function springWeather(roll,wObj, night) {
             } else {
                 wObj.seasonWeatherImage = "lightning" + night + ".png";
             }
-            wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
     } else if (inRange(roll, 3, 20)) {
             wObj.seasonWeather = "Rainy";
             wObj.seasonWeatherImage = "rainy" + night + ".png";
@@ -155,7 +161,7 @@ function springWeather(roll,wObj, night) {
     } else if (inRange(roll, 81, 96)) {
             wObj.seasonWeather = "High Winds";
             wObj.seasonWeatherImage = "windy.png";
-            wObj.seasonWind = RULGenerator.generateRul("WINDHIGH"); 
+            wObj.seasonWind = randomElement(WIND_HIGH);
     } else if (inRange(roll, 97, 100)) {
             wObj.seasonWeather = "Hurricane";
             wObj.seasonWeatherImage = "tornado.png";
@@ -163,8 +169,7 @@ function springWeather(roll,wObj, night) {
 }
 
 function summerWeather(roll,wObj, night) {
-    wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
-    wObj.seasonWind = RULGenerator.generateRul("WIND"); 
+    wObj.seasonWind = randomElement(WIND_RULE);
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
@@ -186,7 +191,6 @@ function summerWeather(roll,wObj, night) {
             } else {
                 wObj.seasonWeatherImage = "lightning" + night + ".png";
             }
-            wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
     } else if (inRange(roll, 3, 10)) {
             wObj.seasonWeather = "Rainy";
             wObj.seasonWeatherImage = "rainy" + night + ".png";
@@ -202,7 +206,7 @@ function summerWeather(roll,wObj, night) {
     } else if (inRange(roll, 66, 80)) {
             wObj.seasonWeather = "High Winds";
             wObj.seasonWeatherImage = "windy.png";
-            wObj.seasonWind = RULGenerator.generateRul("WINDHIGH"); 
+            wObj.seasonWind = randomElement(WIND_HIGH);
     } else if (inRange(roll, 81, 95)) {
             wObj.seasonWeather = "Scorching Heat";
             wObj.seasonWeatherImage = "clearSkies" + night + ".png";
@@ -217,8 +221,7 @@ function summerWeather(roll,wObj, night) {
 }
 
 function fallWeather(roll,wObj, night) {
-    wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
-    wObj.seasonWind = RULGenerator.generateRul("WIND"); 
+    wObj.seasonWind = randomElement(WIND_RULE);
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
@@ -240,7 +243,6 @@ function fallWeather(roll,wObj, night) {
             } else {
                 wObj.seasonWeatherImage = "lightning" + night + ".png";
             }
-            wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
     } else if (inRange(roll, 3, 10)) {
             wObj.seasonWeather = "Mix of Snow/Rain";
             wObj.seasonWeatherImage = "rainSnowShowers" + night + ".png";
@@ -259,7 +261,7 @@ function fallWeather(roll,wObj, night) {
     } else if (inRange(roll, 66, 95)) {
             wObj.seasonWeather = "High Winds";
             wObj.seasonWeatherImage = "windy.png";
-            wObj.seasonWind = RULGenerator.generateRul("WINDHIGH"); 
+            wObj.seasonWind = randomElement(WIND_HIGH);
     } else if (inRange(roll, 96, 100)) {
             wObj.seasonWeather = "Hurricane";
             wObj.seasonWeatherImage = "tornado.png";
@@ -268,8 +270,7 @@ function fallWeather(roll,wObj, night) {
 }
 
 function winterWeather(roll,wObj, night) {
-    wObj.seasonWind =  RULGenerator.generateRul("WIND"); 
-    wObj.seasonWind = RULGenerator.generateRul("WIND"); 
+    wObj.seasonWind = randomElement(WIND_RULE);
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
@@ -287,7 +288,7 @@ function winterWeather(roll,wObj, night) {
     if (roll == 1) {
             wObj.seasonWeather = "Blizzard";
             wObj.seasonWeatherImage = "snow.png";
-            wObj.seasonWind =  RULGenerator.generateRul("WINDBLIZZARD"); 
+            wObj.seasonWind = randomElement(WIND_BLIZZARD);
     } else if (inRange(roll, 2, 20)) {
             wObj.seasonWeather = "Mix of Snow/Rain";
             wObj.seasonWeatherImage = "rainSnowShowers" + night + ".png";
@@ -312,3 +313,55 @@ function winterWeather(roll,wObj, night) {
     }
 
 }
+
+var  WIND_RULE = [
+   'Strong',  
+   'Mild', 
+   'Light',
+   'None', 
+   'Weak', 
+   'Warm',
+   'Gale-Force', 
+   'Squally', 
+   'Violent', 
+   'Strong', 
+   'Blustery', 
+   'Howling', 
+   'Brisk', 
+   'Bitter',
+];
+
+var WIND_BLIZZARD  = [
+   'Strong',  
+   'Gale-Force', 
+   'Squally', 
+   'Violent', 
+   'Strong', 
+   'Blustery', 
+   'Howling', 
+   'Brisk', 
+   'Bitter',
+];
+
+
+var WIND_HIGH = [
+   'Gale-Force',  
+   'Violent', 
+   'Strong', 
+   'Blustery', 
+   'Howling', 
+   'Wild',
+   'Gusts',
+   'Tempest',
+];
+
+var WIND_FORCE = [
+   'Gale-Force', 
+   'Squally', 
+   'Violent', 
+   'Strong', 
+   'Blustery', 
+   'Howling', 
+   'Brisk', 
+   'Bitter',
+];
