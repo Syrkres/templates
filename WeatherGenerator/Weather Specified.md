@@ -1,5 +1,5 @@
 <%*
-let qcSeason = await  tp.system.suggester(["Spring", "Summer", "Fall", "Winter"], ["1", "2", "3", "4"]) 
+let qcSeason = await  tp.system.suggester(["Spring", "Summer", "Fall", "Winter"], ["Spring", "Summer", "Fall", "Winter"]) 
 passedSeason = qcSeason
 _%>
 <%*
