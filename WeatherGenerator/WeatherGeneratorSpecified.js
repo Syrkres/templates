@@ -13,7 +13,7 @@ const targetOutput = `
 > 
 > Wind:  None 
 > 
-> Temperature<br><i class='hot'>Hotter than normal</i>
+> Temperature<br><span class='hot'>Hotter than normal</span>
 > 
 > ![[temperatureHot.png]]
 > 
@@ -95,7 +95,7 @@ async function WeatherGenerator(tp,  passedSeason, passedDaily, passedDailyImg, 
         "\n> \n> " + passedDaily + 
         "\n> \n> Wind: " + passedDailyWind + 
         "\n> \n> Temperature" + 
-        "<br><i class='" + tempClass + "'>" + tempInfo + "</i>" + 
+        "<br><span class='" + tempClass + "'>" + tempInfo + "</span>" + 
         "\n> \n> ![[" + tempImg + "]]" + 
         "\n> \n> &nbsp;" + 
         "\n> \n> Night: " + passedNightly + 

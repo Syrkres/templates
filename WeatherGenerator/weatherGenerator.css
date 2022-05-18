@@ -81,13 +81,13 @@
     text-align: right;
     padding-bottom: 25px;
 }
-.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) i.cold { 
+.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) span.cold { 
     color: #20d7e4;
 }
-.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) i.warm { 
+.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) span.warm { 
     color: #ebc42e;
 }
-.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) i.hot { 
+.callout[data-callout="orpg-weather"] .callout-content  p:nth-child(6) span.hot { 
     color: #e50112;
 }
 .callout[data-callout="orpg-weather"] .callout-content  p:nth-child(7)  { 
