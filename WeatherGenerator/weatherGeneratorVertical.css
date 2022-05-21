@@ -1,0 +1,100 @@
+/* Weather Generator Vertical layout */
+
+.callout[data-callout="orpg-weathervertical"] {
+   border: 1px solid var(--accent);
+   width: 216px;
+   margin: 0px;
+}
+
+.callout[data-callout="orpg-weathervertical"]  .callout-title {
+   display: none;
+}
+
+.callout[data-callout="orpg-weathervertical"] .callout-content {
+   display: grid;
+   grid-template-columns: 144px 35px 35px;
+   grid-template-rows: 20px 200px 40px  30px 25px 25px 5px 25px 25px 25px;
+   grid-column-gap: 0px;
+   grid-row-gap: 0px;
+
+
+   margin: 0px;
+   padding: 0px;
+   overflow: hidden;
+}
+
+
+.callout[data-callout="orpg-weathervertical"] .callout-content p {
+   padding: 0px;
+   margin: 0px;
+}
+
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(1) {
+    grid-area: 2 / 1 / 3 / 4;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(1) img {
+   width: 200px;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(2) {
+    grid-area:  1 / 1 / 2 / 4;
+    text-align: right;
+    font-weight: 800;
+    padding-right: 10px;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(3) {
+   grid-area: 3 / 1 / 4 / 4;
+   font-weight: 900;
+   font-size: x-large;
+   padding-left: 10px;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(4) {
+   grid-area: 4 / 1 / 5 / 3;
+   font-weight: 800;
+   padding-left: 10px;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(5) {
+   grid-area: 5 / 1 / 6 / 3;
+   text-align: right;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(6) {
+   grid-area: 6 / 1 / 7 / 3;
+   text-align: right;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content  p:nth-child(6) span.cold {
+    color: #20d7e4;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content  p:nth-child(6) span.warm {
+    color: #ebc42e;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content  p:nth-child(6) span.hot {
+    color: #e50112;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(7) {
+   grid-area: 4 / 3 / 7 / 4;
+}
+
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(7) img {
+   height: 75px;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(8) {
+   grid-area: 7 / 1 / 8 / 4;
+   border-top: 1px solid var(--accent);
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(9) {
+   grid-area: 8 / 1 / 9 / 2;
+   color: var(--text-muted);
+   padding-left: 10px;
+   text-align: right;
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(10) {
+   grid-area: 9 / 1 / 10 / 2;
+   text-align: right;
+   color: var(--text-muted);
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(11) {
+   grid-area: 10 / 1 / 11 / 2;
+   color: var(--text-muted);
+}
+.callout[data-callout="orpg-weathervertical"] .callout-content p:nth-child(11) {
+   grid-area: 8 / 2 / 11 / 4;
+}

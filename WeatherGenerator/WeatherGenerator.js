@@ -2,27 +2,27 @@
 /* The following is sample/target output we are looking to generate based on CSS */
 const targetOutput = `
 > [!oRPG-Weather]
-> 
+>
 > # Current Weather
-> 
+>
 > ![[clearSkies.png]]
-> 
+>
 > Season: Spring
-> 
+>
 > Clear Skies
-> 
-> Wind:  None 
-> 
+>
+> Wind:  None
+>
 > Temperature<br><span class='hot'>Hotter than normal</span>
-> 
+>
 > ![[temperatureHot.png]]
-> 
+>
 > &nbsp;
-> 
+>
 > Night: High Winds
-> 
-> Wind:  Wild 
-> 
+>
+> Wind:  Wild
+>
 > ![[windy.png]]
 > `;
 
@@ -50,14 +50,23 @@ let weather = {
 /* Return random element from Array */
 function randomElement (array) {
     return array[Math.floor(Math.random() * array.length)];
-}  
+}
 
 function roll() {
    return Math.floor((Math.random() * 100) + 1);
 }
 
-async function WeatherGenerator(tp, passedSeason) {
+async function WeatherGenerator(tp, passedLayout, passedSeason) {
     var output = "This is weather";
+    var layout="oRPG-Weather";
+    var nightWeather = "Night: ";
+    var nightWind = "Wind: ";
+    if (passedLayout == 2) {
+      layout="oRPG-WeatherVertical";
+      nightWeather = "";
+      nightWind = "";
+   }
+    console.log("Layout:" + passedSeason);
     console.log("Preseason:" + passedSeason);
     if ((Number(passedSeason) < 1) || (Number(passedSeason) > 4)) {
         var temp = Math.floor(Math.random() * (4 - 1 + 1) + 1);
@@ -93,21 +102,19 @@ async function WeatherGenerator(tp, passedSeason) {
 
     console.log("Weather:")
     console.log(weather);
-    const generatedOutput = "> [!oRPG-Weather]" + 
-        "\n> \n> # Current Weather" + 
-        "\n> \n> ![[" + weather.day.seasonWeatherImage + "]]" + 
-        "\n> \n> Season: " + weather.seasonName + 
-        "\n> \n> " + weather.day.seasonWeather + 
-        "\n> \n> Wind: " + weather.day.seasonWind + 
-        "\n> \n> Temperature" + 
-        "<br><span class='" + weather.day.seasonTemperatureChangeClass + "'>" + weather.day.seasonTemperatureChange + "</span>" + 
-        "\n> \n> ![[" + weather.day.seasonTemperature + "]]" + 
-        "\n> \n> &nbsp;" + 
-        "\n> \n> Night: " + weather.night.seasonWeather + 
-        "\n> \n> Wind: " + weather.night.seasonWind + 
-        "\n> \n> ![[" + weather.night.seasonWeatherImage + "]]" + 
+    const generatedOutput = "> [!" + layout + "]" +
+        "\n> \n> ![[" + weather.day.seasonWeatherImage + "]]" +
+        "\n> \n> Season: " + weather.seasonName +
+        "\n> \n> " + weather.day.seasonWeather +
+        "\n> \n> Wind: " + weather.day.seasonWind +
+        "\n> \n> Temperature" +
+        "\n> \n> <span class='" + weather.day.seasonTemperatureChangeClass + "'>" + weather.day.seasonTemperatureChange + "</span>" +
+        "\n> \n> ![[" + weather.day.seasonTemperature + "]]" +
+        "\n> \n> &nbsp;" +
+        "\n> \n> " + nightWeather + weather.night.seasonWeather +
+        "\n> \n> " + nightWind + weather.night.seasonWind +
+        "\n> \n> ![[" + weather.night.seasonWeatherImage + "]]" +
         "\n>";
-
 
     return generatedOutput;
 }
@@ -128,7 +135,7 @@ function springWeather(roll,wObj, night) {
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
-    
+
     var temperature = Math.floor((Math.random() * 100) + 1);
     if (temperature < 30) {
         wObj.seasonTemperature = "temperatureCold.png";
@@ -173,7 +180,7 @@ function summerWeather(roll,wObj, night) {
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
-    
+
     var temperature = Math.floor((Math.random() * 100) + 1);
     if (temperature < 30) {
         wObj.seasonTemperature = "temperatureCold.png";
@@ -225,7 +232,7 @@ function fallWeather(roll,wObj, night) {
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
-    
+
     var temperature = Math.floor((Math.random() * 100) + 1);
     if (temperature < 30) {
         wObj.seasonTemperature = "temperatureCold.png";
@@ -266,7 +273,7 @@ function fallWeather(roll,wObj, night) {
             wObj.seasonWeather = "Hurricane";
             wObj.seasonWeatherImage = "tornado.png";
     }
-    
+
 }
 
 function winterWeather(roll,wObj, night) {
@@ -274,7 +281,7 @@ function winterWeather(roll,wObj, night) {
     wObj.seasonTemperature = "temperatureWarm.png";
     wObj.seasonTemperatureChange = "Normal";
     wObj.seasonTemperatureChangeClass = "warm";
-    
+
     var temperature = Math.floor((Math.random() * 100) + 1);
     if (temperature < 30) {
         wObj.seasonTemperature = "temperatureCold.png";
@@ -315,53 +322,53 @@ function winterWeather(roll,wObj, night) {
 }
 
 var  WIND_RULE = [
-   'Strong',  
-   'Mild', 
+   'Strong',
+   'Mild',
    'Light',
-   'None', 
-   'Weak', 
+   'None',
+   'Weak',
    'Warm',
-   'Gale-Force', 
-   'Squally', 
-   'Violent', 
-   'Strong', 
-   'Blustery', 
-   'Howling', 
-   'Brisk', 
+   'Gale-Force',
+   'Squally',
+   'Violent',
+   'Strong',
+   'Blustery',
+   'Howling',
+   'Brisk',
    'Bitter',
 ];
 
 var WIND_BLIZZARD  = [
-   'Strong',  
-   'Gale-Force', 
-   'Squally', 
-   'Violent', 
-   'Strong', 
-   'Blustery', 
-   'Howling', 
-   'Brisk', 
+   'Strong',
+   'Gale-Force',
+   'Squally',
+   'Violent',
+   'Strong',
+   'Blustery',
+   'Howling',
+   'Brisk',
    'Bitter',
 ];
 
 
 var WIND_HIGH = [
-   'Gale-Force',  
-   'Violent', 
-   'Strong', 
-   'Blustery', 
-   'Howling', 
+   'Gale-Force',
+   'Violent',
+   'Strong',
+   'Blustery',
+   'Howling',
    'Wild',
    'Gusts',
    'Tempest',
 ];
 
 var WIND_FORCE = [
-   'Gale-Force', 
-   'Squally', 
-   'Violent', 
-   'Strong', 
-   'Blustery', 
-   'Howling', 
-   'Brisk', 
+   'Gale-Force',
+   'Squally',
+   'Violent',
+   'Strong',
+   'Blustery',
+   'Howling',
+   'Brisk',
    'Bitter',
 ];
