@@ -27,7 +27,7 @@ let qcNightly = await  tp.system.prompt("Nightly Weather")
 passedNightly = qcNightly
 _%>
 <%*
-let qcNightImg = await  tp.system.suggester(["Clear Skies", "Cloudy", "Cloudy Storm", "Lightning", "Mostly Cloudy", "Party Cloudy", "Rain Snow Showers", "Rainy", "Snow", "Stormy", "Tornado", "Windy"], ["clearSkiesNight", "cloudyNight", "cloudyNight", "lightningNight", "mostlyCloudyNight", "partyCloudyNight", "rainSnowShowersNight", "rainyNight", "snowNight", "stormyNight", "tornado", "windy"])
+let qcNightImg = await  tp.system.suggester(["Clear Skies", "Cloudy", "Cloudy Storm", "Foggy", "Lightning", "Mostly Cloudy", "Party Cloudy", "Rain Snow Showers", "Rainy", "Snow", "Stormy", "Tornado", "Windy"], ["clearSkiesNight", "cloudyNight", "cloudyNight", "foggy", "lightningNight", "mostlyCloudyNight", "partyCloudyNight", "rainSnowShowersNight", "rainyNight", "snowNight", "stormyNight", "tornado", "windy"])
 passedNightlyImg = qcNightImg
 _%>
 <%*

@@ -165,11 +165,17 @@ function springWeather(roll,wObj, night) {
     } else if (inRange(roll, 51, 80)) {
             wObj.seasonWeather = "Clear Skies";
             wObj.seasonWeatherImage = "clearSkies" + night + ".png";
-    } else if (inRange(roll, 81, 96)) {
+    } else if (inRange(roll, 80, 89)) {
+            wObj.seasonWeather = "Foggy";
+            wObj.seasonWeatherImage = "foggy" + night + ".png";
+            wObj.seasonTemperature = "temperatureCold.png";
+            wObj.seasonTemperatureChange = "Colder than normal";
+            wObj.seasonTemperatureChangeClass = "cold";
+    } else if (inRange(roll, 90, 97)) {
             wObj.seasonWeather = "High Winds";
             wObj.seasonWeatherImage = "windy.png";
             wObj.seasonWind = randomElement(WIND_HIGH);
-    } else if (inRange(roll, 97, 100)) {
+    } else if (inRange(roll, 98, 100)) {
             wObj.seasonWeather = "Hurricane";
             wObj.seasonWeatherImage = "tornado.png";
     }
@@ -201,10 +207,18 @@ function summerWeather(roll,wObj, night) {
     } else if (inRange(roll, 3, 10)) {
             wObj.seasonWeather = "Rainy";
             wObj.seasonWeatherImage = "rainy" + night + ".png";
-    } else if (inRange(roll, 11, 20)) {
+    } else if (inRange(roll, 11, 18)) {
+            wObj.seasonWeather = "Rainy";
+            wObj.seasonWeatherImage = "rainy" + night + ".png";
+            wObj.seasonWeather = "Foggy";
+            wObj.seasonWeatherImage = "foggy" + night + ".png";
+            wObj.seasonTemperature = "temperatureCold.png";
+            wObj.seasonTemperatureChange = "Colder than normal";
+            wObj.seasonTemperatureChangeClass = "cold";
+    } else if (inRange(roll, 19, 25)) {
             wObj.seasonWeather = "Mostly Clouds";
             wObj.seasonWeatherImage = "mostlyCloudy" + night + ".png";
-    } else if (inRange(roll, 21, 35)) {
+    } else if (inRange(roll, 26, 35)) {
             wObj.seasonWeather = "Light Clouds";
             wObj.seasonWeatherImage = "partlyCloudy" + night + ".png";
     } else if (inRange(roll, 35, 65)) {
