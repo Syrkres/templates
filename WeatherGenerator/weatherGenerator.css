@@ -1,7 +1,8 @@
 
 .callout[data-callout="orpg-weather"] {
     border: 1px solid var(--accent);
-    width: 502px;
+    width: 515px;
+    box-sizing: unset;
 }
 
 .callout[data-callout="orpg-weather"]  .callout-title {
