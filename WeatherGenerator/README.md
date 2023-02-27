@@ -19,4 +19,4 @@ Following code is for a random Weather Generator for Obsidian Tempalter
 - select "Weather Template"
 - enter Season - hit enter.
 
-![Sample]([https://miniworld.com/obsidian/weatherExample.jpg](https://miniworld.com/obsidian/obsidian-weather-example01.jpg))
+![Sample](https://miniworld.com/obsidian/obsidian-weather-example01.jpg)
