@@ -1,0 +1,171 @@
+
+.callout[data-callout="orpg-weatherm-v2"] {
+    border: 1px solid var(--accent);
+    width: 690px;
+    box-sizing: unset;
+    padding: 0px;
+}
+
+.callout[data-callout="orpg-weatherm-v2"]  .callout-title {
+    display: none;
+ }
+
+
+.callout[data-callout="orpg-weatherm-v2"]  .callout-content {
+   margin: 0px;
+   padding: 0px;
+   overflow: none;
+}
+
+
+.callout[data-callout="orpg-weatherm-v2"]  .callout-content h1 {
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--accent);
+    color: var(--th-text);
+    margin-top: 0px;
+}
+
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content {
+    display: grid;
+    grid-template-columns: 100px 100px 160px 50px 170px 100px;
+    grid-template-rows: 50px 25px 25px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    overflow: hidden
+}
+
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content h1 {
+    display: none;
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content p {
+    margin: 0px;
+}
+
+ 
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(1)  {
+    grid-area: 1 / 1 / 4 / 2;
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(2)  {
+    grid-area: 1 / 2 / 2 / 4;
+    align-self: center;
+    padding-left: 5px;
+    color: var(--accent);
+    text-align: left;
+    padding-right: 20px;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(3)  {
+    grid-area: 2 / 2 / 3 / 3;
+    align-self: end;
+    padding-left: 5px;
+    text-align: left;
+    font-weight: 900;
+    color: var(--accent);
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(4)  {
+    grid-area: 3 / 2 / 4 / 3;
+    align-self: start;
+    text-align: left;
+    padding-left: 5px;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(5)  {
+    grid-area: 2 / 3 / 3 / 4;
+    align-self: end;
+    text-align: right;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(6)  {
+    grid-area: 3 / 3 / 4 / 4;
+    align-self: start;
+    text-align: right;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(6) span.cold {
+    color: #20d7e4;
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(6) span.warm {
+    color: #ebc42e;
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(6) span.hot {
+    color: #e50112;
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(7)  {
+    grid-area: 1 / 4 / 4 / 5;
+    align-self: end;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(8)  {
+    grid-area:  1 / 5 / 2 / 6;
+    align-self: center;
+    text-align: center;
+    padding-left: 20px;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(9)  {
+    grid-area:  2 / 5 / 3 / 6;
+    text-align: right;
+    align-self: end;
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(10)  {
+    grid-area:  3 / 5 / 4 / 6;
+    text-align: right;
+    align-self: start;
+
+}
+
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(11)  {
+    grid-area:  1 / 6 / 4 / 7;
+
+}
+.callout[data-callout="orpg-weatherm-v2"] .callout-content  p:nth-child(11) img {
+    font-size: 12px;
+}
+
+
+
+.miscHolding {
+    border-top: 1px solid var(--accent);
+
+    font-size: xx-large;
+}
+/*
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 100px) 50px 200px 100px;
+    grid-template-rows: 50px repeat(2, 25px);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 4 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 4; }
+    .div3 { grid-area: 2 / 2 / 3 / 3; }
+    .div4 { grid-area: 3 / 2 / 4 / 3; }
+    .div5 { grid-area: 2 / 3 / 3 / 4; }
+    .div6 { grid-area: 3 / 3 / 4 / 4; }
+    .div7 { grid-area: 1 / 4 / 4 / 5; }
+    .div8 { grid-area: 1 / 5 / 2 / 6; }
+    .div9 { grid-area: 2 / 5 / 3 / 6; }
+    .div10 { grid-area: 3 / 5 / 4 / 6; }
+    .div11 { grid-area: 1 / 6 / 4 / 7; }
+*/
