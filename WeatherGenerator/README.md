@@ -20,3 +20,8 @@ Following code is for a random Weather Generator for Obsidian Tempalter
 - enter Season - hit enter.
 
 ![Sample](https://miniworld.com/obsidian/obsidian-weather-example01.jpg)
+
+
+
+### Micro Layout
+![Micro Layout](https://miniworld.com/obsidian/weatherMicro.jpg)
