@@ -24,4 +24,12 @@ Following code is for a random Weather Generator for Obsidian Tempalter
 
 
 ### Micro Layout
+- WeatherGeneratorMicro.js - script file to generate micro weather template - place in your TemplaterScript directory
+- WeatherGeneratorMicro.css - CSS file for micro formatting , place in .snippets folder.
 ![Micro Layout](https://miniworld.com/obsidian/weatherMicro.jpg)
+
+
+### Micro Layout V2 (Adds back in Season)
+- WeatherGeneratorMicroV2.js - script file to generate micro weather template - place in your TemplaterScript directory
+- WeatherGeneratorMicroV2.css - CSS file for micro formatting , place in .snippets folder.
+![Micro Layout](https://miniworld.com/obsidian/weatherMicroV2.jpg)
