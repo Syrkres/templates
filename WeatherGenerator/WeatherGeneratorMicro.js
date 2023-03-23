@@ -97,7 +97,7 @@ async function WeatherGenerator(tp, passedLayout, passedSeason) {
     const generatedOutput = "> [!" + layout + "]" +
         "\n> \n> ![[" + weather.day.seasonWeatherImage + "]]" +
         "\n> \n> " + weather.day.seasonWeather +
-        "(" + weather.day.seasonWind + ")" + 
+        "(" + weather.day.seasonWind + " Winds)" + 
         "\n> \n> Temperature" +
         "\n> \n> <span class='" + weather.day.seasonTemperatureChangeClass + "'>" + weather.day.seasonTemperatureChange + "</span>" +
         "\n> \n> ![[" + weather.day.seasonTemperature + "]]" +
